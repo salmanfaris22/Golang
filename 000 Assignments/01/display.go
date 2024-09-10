@@ -7,11 +7,9 @@ import (
 )
 
 func main() {
-
-	fmt.Println("Welcome Pro Enter Input")
+	fmt.Println("enter Name")
 	reader := bufio.NewReader(os.Stdin)
-
 	input, _ := reader.ReadString('\n')
-
 	fmt.Println(input)
+
 }
