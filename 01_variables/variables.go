@@ -7,7 +7,9 @@ func main() {
 	// var name = "salman"
 	// var name bool = true
 	// name := "salman"
-	var name bool
-	name = true
+	// var name bool
+	// name = true
+	var name rune = 'A'
+
 	fmt.Println(name)
 }
