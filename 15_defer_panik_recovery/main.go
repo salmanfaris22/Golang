@@ -3,10 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("one")
-
-	panic("pamoker")
-	// defer recover()
+	defer fmt.Println("one")
 	fmt.Println("tree")
+	panic("pamoker")
 
 }
