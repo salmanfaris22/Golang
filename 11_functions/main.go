@@ -6,9 +6,10 @@ import "fmt"
 // 	return a + b
 // }
 
-func getFuns(fn func(a, b int) int) int {
+func getFuns(fn func(a, b int) int) (int, string) {
 
-	return fn(4, 6)
+	return fn(4, 6), "salman"
+
 }
 
 func main() {
@@ -16,8 +17,8 @@ func main() {
 		return a + b
 	}
 
-	x := getFuns(fn)
-	fmt.Println(x)
+	x, s := getFuns(fn)
+	fmt.Println(x, s)
 
 	// result := add(4, 5)
 	// a, b, c := lnag()
