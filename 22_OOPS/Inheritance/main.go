@@ -29,5 +29,6 @@ func main() {
 	}
 	fmt.Println(mic.name, mic.breed)
 	x := mic.Speek()
+	
 	fmt.Println(x)
 }
