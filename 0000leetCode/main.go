@@ -2,23 +2,30 @@ package main
 
 import "fmt"
 
-func main() {
-	t := 7
+func differenceOfSum(nums []int) int {
+	f := 0
+	b := 0
 
-	arr := []int{1, 3, 5, 6}
-	x := searchInsert(arr, t)
-	fmt.Println(x)
+	for _, i := range nums {
+		f += i
+		b += sumOfDigits(i)
+
+	}
+	return b
 }
 
-func searchInsert(nums []int, target int) int {
-	s := len(nums)
-	for i := 0; i < len(nums); i++ {
-		if nums[i] < target {
-
-			s = i
-
-		}
+func sumOfDigits(n int) int {
+	sum := 0
+	for n > 0 {
+		sum += n % 10
+		n /= 10
 	}
+	return sum
+}
 
-	return s + 1
+func main() {
+	arr := []int{1, 15, 6, 3}
+
+	x := differenceOfSum(arr)
+	fmt.Println(x)
 }

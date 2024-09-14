@@ -1,9 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
+
+func tas(n int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Println(n)
+}
 
 func main() {
-	for i := 0; i < 1000000; i++ {
-		fmt.Println(i)
+	var wg sync.WaitGroup
+	for i := 0; i < 100; i++ {
+		wg.Add(1)
+		go tas(i, &wg)
 	}
+	wg.Wait()
 }
