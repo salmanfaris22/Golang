@@ -12,8 +12,7 @@ func main() {
 	var c, r int
 	fmt.Println("Enter The Array Row")
 	fmt.Scan(&r)
-	fmt.Println("Enter The Array Column")
-
+	fmt.Println("Enter The Array Column ")
 	fmt.Scan(&c)
 
 	arr := Array{
@@ -24,10 +23,12 @@ func main() {
 	for i := range arr.array {
 		arr.array[i] = make([]int, r)
 	}
+	fmt.Println("Enter Aray element")
 	arr.setArray()
 	arr.display()
 
 }
+
 func (a Array) setArray() {
 	for i := range a.array {
 		for j := range a.array[i] {
@@ -37,8 +38,8 @@ func (a Array) setArray() {
 }
 func (a Array) display() {
 	for i := range a.array {
-		for j := range a.array[i] {
-			fmt.Println(a.array[i][j])
-		}
+
+		fmt.Println(a.array[i])
+
 	}
 }
