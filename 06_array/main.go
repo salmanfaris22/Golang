@@ -8,3 +8,4 @@ func main() {
 	num[3] = 23
 	fmt.Println(num)
 }
+
