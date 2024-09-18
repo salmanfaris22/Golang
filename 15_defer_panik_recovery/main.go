@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	defer fmt.Println("one")
-	fmt.Println("tree")
-	panic("pamoker")
+	defer fmt.Println("tow")
+	defer fmt.Println("tree")
 
 }

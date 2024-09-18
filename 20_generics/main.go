@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	name := 32
+	name := ";l,;,"
 	display(name)
 }
 
