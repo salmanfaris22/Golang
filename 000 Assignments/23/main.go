@@ -14,6 +14,7 @@ func main() {
 	fmt.Scan(&r)
 	fmt.Println("Enter The Array Column ")
 	fmt.Scan(&c)
+	
 
 	arr := Array{
 		array: make([][]int, c),

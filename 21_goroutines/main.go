@@ -1,20 +1,27 @@
 package main
 
 import (
-	"fmt"
-	"sync"
+    "fmt"
+    "sync"
+    "time"
 )
 
-func tas(n int, wg *sync.WaitGroup) {
-	defer wg.Done()
-	fmt.Println(n)
+func printNumbers(wg *sync.WaitGroup, n int) {
+    defer wg.Done() // Notify that this goroutine is done
+    for i := 1; i <= n; i++ {
+        fmt.Println(i)
+        time.Sleep(100 * time.Millisecond) // Simulate work
+    }
 }
 
 func main() {
-	var wg sync.WaitGroup
-	for i := 0; i < 100; i++ {
-		wg.Add(1)
-		go tas(i, &wg)
-	}
-	wg.Wait()
+    var wg sync.WaitGroup
+
+    wg.Add(2) // Add two goroutines to wait for
+
+    go printNumbers(&wg, 5) // Start first goroutine
+    go printNumbers(&wg, 5) // Start second goroutine
+
+    wg.Wait() // Wait for both goroutines to finish
+    fmt.Println("All goroutines complete.")
 }

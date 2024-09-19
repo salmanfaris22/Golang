@@ -22,7 +22,7 @@ func GetNumber() float32 {
 		fmt.Scanln()
 		return GetNumber()
 	}
-
+	// fmt.Println("Do you Wat Sum")
 	return n1 + n2
 }
 
