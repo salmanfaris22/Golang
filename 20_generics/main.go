@@ -10,3 +10,5 @@ func main() {
 func display[T any](b T) {
 	fmt.Println("typed is", b)
 }
+
+

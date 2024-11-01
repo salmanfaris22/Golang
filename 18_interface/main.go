@@ -9,20 +9,20 @@ type payment interface {
 type gpay struct {
 }
 
-func (g gpay) Pay(a float32) {
+func (g *gpay) Pay(a float32) {
 	fmt.Println("Get Int G Pay :", a)
 }
 
 type paytm struct {
 }
 
-func (p paytm) Pay(a float32) {
+func (p *paytm) Pay(a float32) {
 	fmt.Println("Get Int Paytm :", a)
 }
 
 func main() {
 	var NewPayment payment
-	NewPayment = paytm{}
+	NewPayment = &paytm{}
 	NewPayment.Pay(32.0)
 
 }
